@@ -1,33 +1,28 @@
+import 'dart:convert';
+
 import 'package:animate_middle_page_issue_page_view/app/modules/home/views/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 
 import 'app/modules/home/controllers/home_controller.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends GetView<JumpPageController> {
+  MyApp({super.key});
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     Get.put(JumpPageController(pages: [
       Container(
         color: Colors.red,
-        child: Column(
-          children: [
-            const Center(
-              child: Text("Page 1", style: TextStyle(color: Colors.black)),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                
-              },
-              child: Text('Button'),
-            )
-          ],
+        child: const Center(
+          child: Text("Page 1", style: TextStyle(color: Colors.black)),
         ),
       ),
       Container(
@@ -88,9 +83,28 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Stack(children: [
-        JumpPageView(tag: 'JumpPageView')
-        
-        ]),
+        JumpPageView(tag: 'JumpPageView'),
+        Center(
+            child: Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  controller.flashToPage(selectedIndex);
+                },
+                child: Text('Button'),
+              ),
+            ),
+          ),
+        Positioned(
+            top: 500,
+            child: ToggleSwitch(
+              onToggle: (index) {
+                selectedIndex = index ?? 0;
+              },
+              totalSwitches: 11,
+              labels:
+                  List<String>.generate(11, (index) => (index + 1).toString()),
+            ))
+      ]),
     );
   }
 }
