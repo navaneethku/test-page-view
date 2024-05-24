@@ -19,62 +19,17 @@ class MyApp extends GetView<JumpPageController> {
   @override
   Widget build(BuildContext context) {
     Get.put(JumpPageController(pages: [
-      Container(
-        color: Colors.red,
-        child: const Center(
-          child: Text("Page 1", style: TextStyle(color: Colors.black)),
-        ),
-      ),
-      Container(
-        color: Colors.green,
-        child: const Center(
-            child: Text("Page 2", style: TextStyle(color: Colors.black))),
-      ),
-      Container(
-        color: Colors.blue,
-        child: const Center(
-            child: Text("Page 3", style: TextStyle(color: Colors.black))),
-      ),
-      Container(
-        color: Colors.yellow,
-        child: const Center(
-            child: Text("Page 4", style: TextStyle(color: Colors.black))),
-      ),
-      Container(
-        color: Colors.orange,
-        child: const Center(
-            child: Text("Page 5", style: TextStyle(color: Colors.black))),
-      ),
-      Container(
-        color: Colors.pink,
-        child: const Center(
-            child: Text("Page 6", style: TextStyle(color: Colors.black))),
-      ),
-      Container(
-        color: Colors.purple,
-        child: const Center(
-            child: Text("Page 7", style: TextStyle(color: Colors.black))),
-      ),
-      Container(
-        color: Colors.brown,
-        child: const Center(
-            child: Text("Page 8", style: TextStyle(color: Colors.black))),
-      ),
-      Container(
-        color: Colors.grey,
-        child: const Center(
-            child: Text("Page 9", style: TextStyle(color: Colors.black))),
-      ),
-      Container(
-        color: Colors.cyan,
-        child: const Center(
-            child: Text("Page 10", style: TextStyle(color: Colors.black))),
-      ),
-      Container(
-        color: Colors.lime,
-        child: const Center(
-            child: Text("Page 11", style: TextStyle(color: Colors.black))),
-      ),
+      Text("Page 1", style: TextStyle(color: Colors.red)),
+      Text("Page 2", style: TextStyle(color: Colors.blue)),
+      Text("Page 3", style: TextStyle(color: Colors.green)),
+      Text("Page 4", style: TextStyle(color: Colors.yellow)),
+      Text("Page 5", style: TextStyle(color: Colors.orange)),
+      Text("Page 6", style: TextStyle(color: Colors.purple)),
+      Text("Page 7", style: TextStyle(color: Colors.pink)),
+      Text("Page 8", style: TextStyle(color: Colors.teal)),
+      Text("Page 9", style: TextStyle(color: Colors.indigo)),
+      Text("Page 10", style: TextStyle(color: Colors.brown)),
+      Text("Page 11", style: TextStyle(color: Colors.grey)),
     ]));
     return MaterialApp(
       title: 'Flutter Demo',

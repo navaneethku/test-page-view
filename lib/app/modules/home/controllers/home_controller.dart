@@ -76,7 +76,7 @@ class JumpPageController extends GetxController {
       return;
     }
     // if(!((pageCurrent - pageTarget).abs()==1)) {
-      swapChildren(pageCurrent, pageTarget);
+    swapChildren(pageCurrent, pageTarget);
     // }
     // quickJump(pageCurrent, pageTarget);
     if (pageCurrent < pageTarget) {
@@ -96,8 +96,9 @@ class JumpPageController extends GetxController {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       visiblePageViews.assignAll(List<Widget>.from(pages));
       // refreshPageController();
+
       update();
-      // pageController.jumpToPage(pageCurrent);
+      pageController.jumpToPage(pageCurrent);
       print("PippyUpdate $page");
     });
   }
