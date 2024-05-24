@@ -65,7 +65,7 @@ class JumpPageController extends GetxController {
 
   void flashToPage(int i) async {
     int pageTarget = i;
-    // int pageCurrent = page!.round().toInt();
+    int pageCurrent = page!.round().toInt();
     // print("PippyUser $pageCurrent");
     // print("PippyTarget $pageTarget");
     print("PippySystem $page");
@@ -75,9 +75,9 @@ class JumpPageController extends GetxController {
     if (pageCurrent == pageTarget) {
       return;
     }
-    if(!((pageCurrent - pageTarget).abs()==1)) {
+    // if(!((pageCurrent - pageTarget).abs()==1)) {
       swapChildren(pageCurrent, pageTarget);
-    }
+    // }
     // quickJump(pageCurrent, pageTarget);
     if (pageCurrent < pageTarget) {
       print("Pippy forward");
