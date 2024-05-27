@@ -56,6 +56,8 @@ class MyApp extends GetView<JumpPageController> {
                 selectedIndex = index ?? 0;
               },
               totalSwitches: 11,
+              activeFgColor: Colors.white,
+              inactiveFgColor: Colors.white,
               labels:
                   List<String>.generate(11, (index) => (index + 1).toString()),
             ))
